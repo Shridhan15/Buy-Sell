@@ -1,7 +1,14 @@
 .hero-section {
   position: relative;
-  height: 50vh; 
-  background-color: #0f0f0f;
+  height: 80vh;
+  background: linear-gradient(
+    135deg,
+    #0a0a0a 0%,
+    #1a1a1a 25%,
+    #0f0f0f 50%,
+    #1e1e1e 75%,
+    #0a0a0a 100%
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -11,19 +18,35 @@
 
 .animated-bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 30%, #1a1a1a, #0f0f0f);
-  animation: animateBg 10s linear infinite alternate;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+      circle at 20% 30%,
+      rgba(0, 200, 83, 0.1),
+      transparent 50%
+    ),
+    radial-gradient(circle at 80% 70%, rgba(0, 200, 83, 0.05), transparent 50%),
+    radial-gradient(
+      circle at 40% 90%,
+      rgba(255, 255, 255, 0.02),
+      transparent 40%
+    );
+  animation: animateBg 15s ease-in-out infinite alternate;
   z-index: 0;
 }
 
 @keyframes animateBg {
   0% {
-    background-position: 0% 0%;
+    transform: translate(-10%, -10%) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(5%, 5%) rotate(180deg);
+    opacity: 1;
   }
   100% {
-    background-position: 100% 100%;
+    transform: translate(-5%, -5%) rotate(360deg);
+    opacity: 0.6;
   }
 }
 
@@ -32,63 +55,189 @@
   z-index: 1;
   text-align: center;
   color: #ffffff;
-  max-width: 800px;
-  animation: fadeInUp 1s ease-in-out;
+  max-width: 900px;
+  padding: 40px 20px;
+}
+
+/* Text Animation Classes */
+.text-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1.2s ease-out forwards;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-animate-delay {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1.2s ease-out 0.3s forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-animate-delay-2 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1.2s ease-out 0.9s forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-animate-delay-3 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1.2s ease-out 1.2s forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.text-animate-delay-4 {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUpFade 1.2s ease-out 1.5s forwards;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Blinking text effect for "Essentials" */
+.blink-text {
+  animation: slideUpFade 1.2s ease-out 0.9s forwards,
+    blinkEffect 1.5s ease-in-out 2.5s infinite;
+  color: #00e676 !important;
+  text-shadow: 0 0 20px rgba(0, 230, 118, 0.8), 0 2px 4px rgba(0, 0, 0, 0.8);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes blinkEffect {
+  0%, 70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  35% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 16px;
-  font-weight: 700;
+  font-size: 4.5rem;
+  margin-bottom: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 230, 118, 0.5), 0 2px 4px rgba(0, 0, 0, 0.8);
+  filter: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes textGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .hero-content p {
-  font-size: 1.3rem;
-  color: #cccccc;
-  margin-bottom: 32px;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  font-weight: 300;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .hero-buttons button {
-  padding: 14px 28px;
-  font-size: 1rem;
-  border-radius: 6px;
+  padding: 18px 36px;
+  font-size: 1.1rem;
+  border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
+  transition: all 0.4s ease;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  min-width: 180px;
+}
+
+.hero-buttons button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.hero-buttons button:hover::before {
+  left: 100%;
 }
 
 .hero-buttons button:first-child {
-  background-color: #00c853;
+  background: linear-gradient(135deg, #00e676, #00c853);
   color: white;
   border: none;
+  box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
 }
 
 .hero-buttons button:first-child:hover {
-  background-color: #009624;
+  background: linear-gradient(135deg, #00c853, #009624);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 200, 83, 0.6);
 }
 
 .hero-buttons button:last-child {
-  background-color: transparent;
-  border: 2px solid #00c853;
-  color: #00c853;
+  background: transparent;
+  border: 2px solid #00e676;
+  color: #00e676;
+  box-shadow: 0 8px 25px rgba(0, 230, 118, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .hero-buttons button:last-child:hover {
-  background-color: #00c853;
+  background: linear-gradient(135deg, #00e676, #00c853);
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 230, 118, 0.4);
+  border-color: transparent;
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(60px);
   }
   100% {
     opacity: 1;
@@ -97,11 +246,40 @@
 }
 
 @media (max-width: 768px) {
+  .hero-section {
+    height: 70vh;
+  }
+
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 3rem;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    gap: 20px;
+  }
+
+  .hero-buttons button {
+    padding: 16px 28px;
+    font-size: 1rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
 
   .hero-content p {
     font-size: 1.1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 }

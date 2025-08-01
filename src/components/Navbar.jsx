@@ -1,19 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
-
-import "./Navbar.css"; 
+import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 import { assests } from "../assets/assets";
 
 const Navbar = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <motion.nav
-      className="navbar"
-      initial={{ opacity: 0, x: -50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
+    <nav className="navbar">
       <img
         onClick={() => navigate("/")}
         src={assests.logo}
@@ -21,29 +14,17 @@ const Navbar = () => {
         className="logo"
       />
       <ul className="nav-links">
-        <motion.li
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
+        <li onClick={() => navigate("/")} className="nav-item">
           Home
-        </motion.li>
-        <motion.li
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
+        </li>
+        <li onClick={() => navigate("/about")} className="nav-item">
           About
-        </motion.li>
-        <motion.li
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          Contact
-        </motion.li>
+        </li>
+        <li onClick={() => navigate("/login")} className="nav-item login-btn">
+          Login
+        </li>
       </ul>
-    </motion.nav>
+    </nav>
   );
 };
 

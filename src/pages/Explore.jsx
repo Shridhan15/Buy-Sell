@@ -9,11 +9,29 @@ const Explore = () => {
       <div className="product-list">
         {dummyProducts.map((product, index) => (
           <div className="product-card shadow" key={index}>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="product-img"
-            />
+            <div
+              className="product-img-wrapper"
+              onMouseMove={(e) => {
+                const wrapper = e.currentTarget;
+                const rect = wrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                wrapper.style.setProperty("--x", `${x}px`);
+                wrapper.style.setProperty("--y", `${y}px`);
+                wrapper.classList.add("color-reveal");
+              }}
+              onMouseLeave={(e) => {
+                const wrapper = e.currentTarget;
+                wrapper.classList.remove("color-reveal");
+              }}
+            >
+              <img
+                src={product.image}
+                alt={product.name}
+                className="product-img"
+              />
+            </div>
+
             <div className="product-info">
               <h2>{product.name}</h2>
               <p>
@@ -32,8 +50,6 @@ const Explore = () => {
           </div>
         ))}
       </div>
-
-       
     </div>
   );
 };
