@@ -1,6 +1,6 @@
 .hero-section {
   position: relative;
-  height: 100vh;
+  height: 50vh; 
   background-color: #0f0f0f;
   overflow: hidden;
   display: flex;

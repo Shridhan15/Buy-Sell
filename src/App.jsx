@@ -3,6 +3,7 @@ import Login from "./pages/Login.jsx";
 import Navbar from "./components/Navbar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
+import Explore from "./pages/Explore.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/explore" element={<Explore />} />
       </Routes>
     </div>
   );

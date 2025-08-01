@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import "./Navbar.css";
-import assests from "../assets/assets";
+import "./Navbar.css"; 
 import { useNavigate } from "react-router-dom";
+import { assests } from "../assets/assets";
 
 const Navbar = () => {
     const navigate = useNavigate();
