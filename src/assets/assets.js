@@ -92,7 +92,7 @@ const dummyProducts = [
     // Keyboards
     {
         image: key1,
-        name: "Redragon K552 Mechanical",
+        name: "Redragon K552 Mech",
         purchaseDate: "Nov 2022",
         usedDuration: "1 year 9 months",
         price: "1500",
@@ -108,7 +108,7 @@ const dummyProducts = [
     },
     {
         image: key3,
-        name: "TVS Gold Bharat Mechanical",
+        name: "TVS Bharat Mechanical",
         purchaseDate: "Aug 2021",
         usedDuration: "3 years",
         price: "1000",

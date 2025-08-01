@@ -4,13 +4,13 @@ import dummyProducts from "../assets/assets.js";
 
 const Explore = () => {
   return (
-    <div className="explore-page">
+    <div className="explorePage">
       <h1 className="title">Explore Products</h1>
-      <div className="product-list">
+      <div className="prodList">
         {dummyProducts.map((product, index) => (
-          <div className="product-card shadow" key={index}>
+          <div className="prodCard shadow" key={index}>
             <div
-              className="product-img-wrapper"
+              className="prodImgWrapper"
               onMouseMove={(e) => {
                 const wrapper = e.currentTarget;
                 const rect = wrapper.getBoundingClientRect();
@@ -18,21 +18,21 @@ const Explore = () => {
                 const y = e.clientY - rect.top;
                 wrapper.style.setProperty("--x", `${x}px`);
                 wrapper.style.setProperty("--y", `${y}px`);
-                wrapper.classList.add("color-reveal");
+                wrapper.classList.add("colorReveal");
               }}
               onMouseLeave={(e) => {
                 const wrapper = e.currentTarget;
-                wrapper.classList.remove("color-reveal");
+                wrapper.classList.remove("colorReveal");
               }}
             >
               <img
                 src={product.image}
                 alt={product.name}
-                className="product-img"
+                className="prodImg"
               />
             </div>
 
-            <div className="product-info">
+            <div className="prodInfo">
               <h2>{product.name}</h2>
               <p>
                 <strong>Purchase Date:</strong> {product.purchaseDate}

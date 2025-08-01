@@ -3,9 +3,9 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div className="about-page">
-      <div className="about-container">
-        <h1 className="about-title">About Campus Exchange</h1>
+    <div className="abt-page">
+      <div className="abt-container">
+        <h1 className="abt-title">About Campus Exchange</h1>
 
         <section className="mission-section">
           <h2>Our Mission</h2>

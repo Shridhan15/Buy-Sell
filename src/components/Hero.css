@@ -1,4 +1,4 @@
-.hero-section {
+.heroSection {
   position: relative;
   height: 80vh;
   background: linear-gradient(
@@ -16,7 +16,7 @@
   padding: 0 20px;
 }
 
-.animated-bg {
+.animatedBg {
   position: absolute;
   width: 120%;
   height: 120%;
@@ -50,7 +50,7 @@
   }
 }
 
-.hero-content {
+.heroContent {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -60,7 +60,7 @@
 }
 
 /* Text Animation Classes */
-.text-animate {
+.textAnimate {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1.2s ease-out forwards;
@@ -69,7 +69,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-animate-delay {
+.textAnimateDelay {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1.2s ease-out 0.3s forwards;
@@ -77,7 +77,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-animate-delay-2 {
+.textAnimateDelay2 {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1.2s ease-out 0.9s forwards;
@@ -85,7 +85,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-animate-delay-3 {
+.textAnimateDelay3 {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1.2s ease-out 1.2s forwards;
@@ -93,7 +93,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.text-animate-delay-4 {
+.textAnimateDelay4 {
   opacity: 0;
   transform: translateY(30px);
   animation: slideUpFade 1.2s ease-out 1.5s forwards;
@@ -113,7 +113,7 @@
 }
 
 /* Blinking text effect for "Essentials" */
-.blink-text {
+.blinkText {
   animation: slideUpFade 1.2s ease-out 0.9s forwards,
     blinkEffect 1.5s ease-in-out 2.5s infinite;
   color: #00e676 !important;
@@ -123,7 +123,8 @@
 }
 
 @keyframes blinkEffect {
-  0%, 70% {
+  0%,
+  70% {
     opacity: 1;
     transform: scale(1);
   }
@@ -133,7 +134,7 @@
   }
 }
 
-.hero-content h1 {
+.heroContent h1 {
   font-size: 4.5rem;
   margin-bottom: 24px;
   font-weight: 800;
@@ -154,7 +155,7 @@
   }
 }
 
-.hero-content p {
+.heroContent p {
   font-size: 1.5rem;
   color: #e0e0e0;
   margin-bottom: 40px;
@@ -163,7 +164,7 @@
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.hero-buttons {
+.heroBtns {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -171,7 +172,7 @@
   margin-top: 20px;
 }
 
-.hero-buttons button {
+.heroBtns button {
   padding: 18px 36px;
   font-size: 1.1rem;
   border-radius: 50px;
@@ -185,7 +186,7 @@
   min-width: 180px;
 }
 
-.hero-buttons button::before {
+.heroBtns button::before {
   content: "";
   position: absolute;
   top: 0;
@@ -201,24 +202,24 @@
   transition: left 0.6s ease;
 }
 
-.hero-buttons button:hover::before {
+.heroBtns button:hover::before {
   left: 100%;
 }
 
-.hero-buttons button:first-child {
+.heroBtns button:first-child {
   background: linear-gradient(135deg, #00e676, #00c853);
   color: white;
   border: none;
   box-shadow: 0 8px 25px rgba(0, 200, 83, 0.4);
 }
 
-.hero-buttons button:first-child:hover {
+.heroBtns button:first-child:hover {
   background: linear-gradient(135deg, #00c853, #009624);
   transform: translateY(-3px);
   box-shadow: 0 12px 35px rgba(0, 200, 83, 0.6);
 }
 
-.hero-buttons button:last-child {
+.heroBtns button:last-child {
   background: transparent;
   border: 2px solid #00e676;
   color: #00e676;
@@ -226,7 +227,7 @@
   backdrop-filter: blur(10px);
 }
 
-.hero-buttons button:last-child:hover {
+.heroBtns button:last-child:hover {
   background: linear-gradient(135deg, #00e676, #00c853);
   color: white;
   transform: translateY(-3px);
@@ -246,23 +247,23 @@
 }
 
 @media (max-width: 768px) {
-  .hero-section {
+  .heroSection {
     height: 70vh;
   }
 
-  .hero-content h1 {
+  .heroContent h1 {
     font-size: 3rem;
   }
 
-  .hero-content p {
+  .heroContent p {
     font-size: 1.2rem;
   }
 
-  .hero-buttons {
+  .heroBtns {
     gap: 20px;
   }
 
-  .hero-buttons button {
+  .heroBtns button {
     padding: 16px 28px;
     font-size: 1rem;
     min-width: 160px;
@@ -270,15 +271,15 @@
 }
 
 @media (max-width: 480px) {
-  .hero-content h1 {
+  .heroContent h1 {
     font-size: 2.5rem;
   }
 
-  .hero-content p {
+  .heroContent p {
     font-size: 1.1rem;
   }
 
-  .hero-buttons {
+  .heroBtns {
     flex-direction: column;
     align-items: center;
   }

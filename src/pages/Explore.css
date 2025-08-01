@@ -5,7 +5,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.explore-page {
+.explorePage {
   padding: 40px 20px;
   background: #000;
   min-height: 100vh;
@@ -19,14 +19,14 @@ body {
   animation: fadeIn 1s ease;
 }
 
-.product-list {
+.prodList {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
 
-.product-card {
+.prodCard {
   width: 340px;
   background: linear-gradient(0deg, #000, #262626);
   color: white;
@@ -38,27 +38,27 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
-.product-card:hover {
+.prodCard:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2),
     0 0 30px rgba(255, 255, 255, 0.1);
 }
 
-.product-img-wrapper {
+.prodImgWrapper {
   position: relative;
   overflow: hidden;
   height: 250px;
   cursor: none;
 }
 
-.product-img {
+.prodImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease;
 }
 
-.product-img-wrapper::before {
+.prodImgWrapper::before {
   content: "USED ITEM";
   position: absolute;
   top: 0;
@@ -78,7 +78,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
-.product-img-wrapper.color-reveal::before {
+.prodImgWrapper.colorReveal::before {
   mask: radial-gradient(
     circle 120px at var(--x) var(--y),
     transparent 0%,
@@ -93,18 +93,18 @@ body {
   );
 }
 
-.product-img-wrapper:hover::before {
+.prodImgWrapper:hover::before {
   transition: mask 0.1s ease;
   -webkit-transition: -webkit-mask 0.1s ease;
 }
 
-.product-info {
+.prodInfo {
   padding: 20px;
   background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
   border-top: 1px solid #333;
 }
 
-.product-info h2 {
+.prodInfo h2 {
   margin: 0 0 15px 0;
   font-size: 1.5rem;
   color: #fff;
@@ -114,7 +114,7 @@ body {
   padding-bottom: 8px;
 }
 
-.product-info p {
+.prodInfo p {
   margin: 8px 0;
   font-size: 0.95rem;
   line-height: 1.4;
@@ -124,13 +124,13 @@ body {
   align-items: center;
 }
 
-.product-info p strong {
+.prodInfo p strong {
   color: #fff;
   font-weight: 500;
   min-width: 120px;
 }
 
-.product-info p:not(.condition) strong:after {
+.prodInfo p:not(.condition) strong:after {
   content: ":";
   margin-left: 2px;
 }

@@ -11,7 +11,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.login-page {
+.loginPage {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,18 +21,19 @@ body {
 .box {
   position: relative;
   width: 380px;
-  height: 420px;
+  min-height: 480px;
+  height: auto;
   border-radius: 8px;
   overflow: hidden;
   background-color: #1c1c1c;
 }
 .box::before {
-  content: "";  
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 560px;
   background: linear-gradient(
     0deg,
     transparent,
@@ -55,7 +56,7 @@ body {
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 560px;
   background: linear-gradient(
     0deg,
     transparent,
@@ -70,26 +71,26 @@ body {
   animation-delay: -3s;
 }
 
-.borderline {
+.borderLine {
   position: absolute;
   top: 0;
   inset: 0;
 }
 
-.borderline::before {
+.borderLine::before {
   content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 560px;
   background: linear-gradient(
     0deg,
     transparent,
     transparent,
-    #ff2770,
-    #ff2770,
-    #ff2770
+    #1c9f3d,
+    #27ea24,
+    #0bf612
   );
   z-index: 1;
   transform-origin: bottom right;
@@ -97,20 +98,20 @@ body {
   animation-delay: -1.5s;
 }
 
-.borderline::after {
+.borderLine::after {
   content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 380px;
-  height: 420px;
+  height: 560px;
   background: linear-gradient(
     0deg,
     transparent,
     transparent,
-    #ff2770,
-    #ff2770,
-    #ff2770
+    #2eeb37,
+    #1fd039,
+    #1fcc3c
   );
   z-index: 1;
   transform-origin: bottom right;
@@ -236,7 +237,7 @@ body {
   opacity: 0.8;
 }
 
-.neon-button {
+.neonButton {
   position: relative;
   display: inline-block;
   padding: 15px 30px;
@@ -255,19 +256,19 @@ body {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
 
-.neon-button:hover {
+.neonButton:hover {
   background-color: #03e9f4;
   color: #050801;
   box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
     0 0 200px #03e9f4;
 }
 
-.neon-button span {
+.neonButton span {
   position: absolute;
   display: block;
 }
 
-.neon-button span:nth-child(1) {
+.neonButton span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -276,7 +277,7 @@ body {
   animation: animate1 1s linear infinite;
 }
 
-.neon-button span:nth-child(2) {
+.neonButton span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -286,7 +287,7 @@ body {
   animation-delay: 0.25s;
 }
 
-.neon-button span:nth-child(3) {
+.neonButton span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -296,7 +297,7 @@ body {
   animation-delay: 0.5s;
 }
 
-.neon-button span:nth-child(4) {
+.neonButton span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
