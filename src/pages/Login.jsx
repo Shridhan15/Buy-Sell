@@ -26,7 +26,7 @@ const Login = () => {
     e.preventDefault();
     if (name && email && password) {
       alert("Account created successfully");
-      setIsSignUp(false); 
+      setIsSignUp(false);
       setName("");
       setEmail("");
       setUsername("");
@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   const toggleMode = () => {
-    setIsSignUp(!isSignUp); 
+    setIsSignUp(!isSignUp);
     setName("");
     setEmail("");
     setUsername("");

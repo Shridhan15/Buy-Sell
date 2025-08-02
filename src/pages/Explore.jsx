@@ -25,11 +25,7 @@ const Explore = () => {
                 wrapper.classList.remove("colorReveal");
               }}
             >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="prodImg"
-              />
+              <img src={product.image} alt={product.name} className="prodImg" />
             </div>
 
             <div className="prodInfo">

@@ -1,10 +1,10 @@
 import React from "react";
-import Login from "./pages/Login.jsx";
-import Navbar from "./components/Navbar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Explore from "./pages/Explore.jsx";
 import About from "./pages/About.jsx";
+import Navbar from "./components/Navbar/Navbar.jsx";
+import Login from "./pages/Login.jsx";
 
 const App = () => {
   const location = useLocation();

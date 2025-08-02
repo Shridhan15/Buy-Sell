@@ -6,18 +6,18 @@ const Hero = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="heroSection">
+    <section className="heroSec">
       <div className="animatedBg"></div>
 
       <div className="heroContent">
         <h1>
-          <span className="textAnimateDelay">Buy & Sell College </span>
-          <span className="textAnimateDelay2 blinkText">Essentials</span>
+          <span className="textAniDelay">Buy & Sell College </span>
+          <span className="textAniDelay2 blinkText">Essentials</span>
         </h1>
-        <p className="textAnimateDelay3">
+        <p className="textAniDelay3">
           Find or sell books, gadgets, furniture & more within your campus.
         </p>
-        <div className=" heroBtns textAnimateDelay4">
+        <div className=" heroBtns textAniDelay4">
           <button onClick={() => navigate("/explore")}>Explore Listings</button>
           <button onClick={() => navigate("/post")}>Post a Product</button>
         </div>

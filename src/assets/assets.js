@@ -11,9 +11,13 @@ import ph4 from './ph4.png';
 import key1 from './key1.png';
 import key2 from './key2.png';
 import key3 from './key3.png';
+import m1 from './m1.png';
+import m2 from './m2.png';
+import m3 from './m3.png';
+import m4 from './m4.png';
+import m5 from './m5.png';
 
 const dummyProducts = [
-    // Laptops
     {
         image: lap1,
         name: "HP Pavilion 14",
@@ -54,8 +58,6 @@ const dummyProducts = [
         price: "48000",
         condition: "Well maintained, minor body dent"
     },
-
-    // Phones
     {
         image: ph1,
         name: "Redmi Note 12",
@@ -89,7 +91,6 @@ const dummyProducts = [
         condition: "Back cover cracked, works fine"
     },
 
-    // Keyboards
     {
         image: key1,
         name: "Redragon K552 Mech",
@@ -119,6 +120,42 @@ const dummyProducts = [
 export default dummyProducts;
 
 
+const teamMembers = [
+    {
+        id: 1,
+        name: "Vivek Gupta",
+        position: "Chairperson",
+        image: m1,
+    },
+    {
+        id: 2,
+        name: "Pooja Swamy",
+        position: " Event Manager",
+        image: m2,
+    },
+    {
+        id: 3,
+        name: "Dheer Shrivastav",
+        position: "Vice Chairperson",
+        image: m3,  
+    },
+    {
+        id: 4,
+        name: "Sharvari More",
+        position: "Treasurer",
+        image: m4,
+    },
+    {
+        id: 5,
+        name: "Tanmayi Reddy",
+        position: "Secreatary",
+        image: m5,
+    },
+];
+
+export { teamMembers };
+
+
 
 
 
@@ -134,6 +171,11 @@ export const assests = {
     ph4,
     key1,
     key2,
-    key3
+    key3,
+    m1,
+    m2,
+    m3,
+    m4,
+    m5,
 
 }

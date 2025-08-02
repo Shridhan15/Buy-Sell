@@ -1,15 +1,14 @@
-import Hero from "../components/Hero";
-import ItemsMarque from "../components/ItemsMarque.jsx";
-import Footer from "../components/Footer.jsx";
-import "./Home.css";
 import React from "react";
+import Hero from "../components/Hero/Hero";
+import ItemsMarquee from "../components/ItemsMarque/ItemsMarque";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
     <div>
       <Hero />
 
-      <ItemsMarque />
+      <ItemsMarquee />
 
       <Footer />
     </div>

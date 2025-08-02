@@ -1,17 +1,16 @@
-.m-container {
+.mWrapper {
   overflow-x: hidden;
   overflow-y: hidden;
   white-space: nowrap;
   width: 100%;
   position: relative;
-  padding: 120px 0 140px;
-  margin-top: 120px;
+  padding: 40px 0 140px; 
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   border-top: 1px solid rgba(0, 230, 118, 0.2);
   border-bottom: 1px solid rgba(0, 230, 118, 0.2);
 }
 
-.m-container::before {
+.mWrapper::before {
   content: "";
   position: absolute;
   top: 0;
@@ -28,19 +27,33 @@
   z-index: 0;
 }
 
-.m-track {
-  display: inline-block;
-  animation: m 35s linear infinite;
-  position: relative;
+.mWrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 230, 118, 0.3),
+    transparent
+  );
+  transform: translateY(-50%);
   z-index: 1;
-  padding-left: 50px;
 }
 
-.m-container:hover .m-track {
+.mContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.mContainer:hover {
   animation-play-state: paused;
 }
 
-.m-item {
+.mItem {
   display: inline-block;
   margin: 0 40px;
   width: 350px;
@@ -55,7 +68,7 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-.m-item::before {
+.mItem::before {
   content: "";
   position: absolute;
   top: 0;
@@ -72,11 +85,28 @@
   z-index: 2;
 }
 
-.m-item:hover::before {
+.mItem:hover::before {
   left: 100%;
 }
 
-.m-item:hover {
+.mItem::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00e676, transparent);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  z-index: 3;
+}
+
+.mItem:hover::after {
+  transform: scaleX(1);
+}
+
+.mItem:hover {
   transform: scale(1.08) translateY(-12px);
   z-index: 10;
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 230, 118, 0.4),
@@ -84,7 +114,7 @@
   border-color: rgba(0, 230, 118, 0.5);
 }
 
-.m-item img {
+.mItemImage {
   width: 100%;
   height: 320px;
   object-fit: cover;
@@ -94,12 +124,12 @@
   border-radius: 24px 24px 0 0;
 }
 
-.m-item:hover img {
+.mItem:hover .mItemImage {
   transform: scale(1.08);
   filter: brightness(1.15) contrast(1.15) saturate(1.1);
 }
 
-.m-item-name {
+.mItemName {
   text-align: center;
   color: #00e676;
   font-weight: 700;
@@ -112,13 +142,34 @@
   border: 1px solid rgba(0, 230, 118, 0.2);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
-  z-index: 1;
+  z-index: 3;
   text-transform: capitalize;
   letter-spacing: 0.5px;
   line-height: 1.3;
+  overflow: hidden;
 }
 
-.m-item:hover .m-item-name {
+.mItemName::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.mItem:hover .mItemName::before {
+  left: 100%;
+}
+
+.mItem:hover .mItemName {
   color: #ffffff;
   background: rgba(0, 230, 118, 0.25);
   border-color: rgba(0, 230, 118, 0.5);
@@ -126,7 +177,35 @@
   box-shadow: 0 8px 25px rgba(0, 230, 118, 0.2);
 }
 
-@keyframes m {
+.mTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #00e676, #00c853, #4caf50);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+}
+
+.mTitle::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00e676, transparent);
+}
+
+/* Animations */
+@keyframes mMove {
   0% {
     transform: translateX(0%);
   }
@@ -135,82 +214,136 @@
   }
 }
 
-/* Responsive Design */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 230, 118, 0.6);
+  }
+}
+
+/* Media quries */
 @media (max-width: 1200px) {
-  .m-item {
+  .mItem {
     width: 320px;
     height: 380px;
     margin: 0 35px;
   }
 
-  .m-item img {
+  .mItemImage {
     height: 280px;
+  }
+
+  .mTitle {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .m-container {
-    padding: 100px 0 120px;
-    margin-top: 80px;
+  .mWrapper {
+    padding: 100px 0 120px; 
   }
 
-  .m-item {
+  .mItem {
     width: 280px;
     height: 340px;
     margin: 0 30px;
   }
 
-  .m-item img {
+  .mItemImage {
     height: 240px;
   }
 
-  .m-item-name {
+  .mItemName {
     font-size: 1.1rem;
     margin: 15px 12px;
     padding: 12px 16px;
   }
 
-  .m-track {
-    animation: m 25s linear infinite;
-    padding-left: 30px;
+  .mItem:hover {
+    transform: scale(1.05) translateY(-10px);
   }
 
-  .m-item:hover {
-    transform: scale(1.05) translateY(-10px);
+  .mTitle {
+    font-size: 2rem;
+    margin-bottom: 30px;
   }
 }
 
 @media (max-width: 480px) {
-  .m-container {
-    padding: 80px 0 100px;
-    margin-top: 60px;
+  .mWrapper {
+    padding: 80px 0 100px; 
   }
 
-  .m-item {
+  .mItem {
     width: 240px;
     height: 300px;
     margin: 0 25px;
     border-radius: 20px;
   }
 
-  .m-item img {
+  .mItemImage {
     height: 200px;
     border-radius: 20px 20px 0 0;
   }
 
-  .m-item-name {
+  .mItemName {
     font-size: 1rem;
     margin: 12px 10px;
     padding: 10px 14px;
     border-radius: 12px;
   }
 
-  .m-item:hover {
+  .mItem:hover {
     transform: scale(1.03) translateY(-6px);
   }
 
-  .m-track {
-    animation: m 20s linear infinite;
-    padding-left: 20px;
+  .mTitle {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
   }
+}
+
+/* Loading state for images */
+.mItemImage[data-loading="true"] {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .mContainer {
+    animation: none;
+  }
+
+  .mItem {
+    transition: none;
+  }
+
+  .mItem:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+.mItem:focus {
+  outline: 2px solid #00e676;
+  outline-offset: 4px;
+}
+
+.mItem:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0, 230, 118, 0.5);
 }

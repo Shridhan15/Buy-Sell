@@ -1,13 +1,14 @@
 import React from "react";
-import "./About.css";
+import "./About.css"; 
+import OurTeam from "../components/OurTeam/OurTeam";
 
 const About = () => {
   return (
-    <div className="abt-page">
-      <div className="abt-container">
-        <h1 className="abt-title">About Campus Exchange</h1>
+    <div className="abtPage">
+      <div className="abtContainer">
+        <h1 className="abtTitle">About Campus Exchange</h1>
 
-        <section className="mission-section">
+        <section className="missionSection">
           <h2>Our Mission</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat
@@ -19,19 +20,23 @@ const About = () => {
           </p>
         </section>
 
-        <section className="features-section">
+        <section className="featuresSection">
           <h2>Why Choose Campus Exchange?</h2>
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">📚</div>
+          <div className="featuresGrid">
+            <div className="featureCard">
+              <div className="featureIcon">
+                <i className="fas fa-graduation-cap"></i>
+              </div>
               <h3>Student-Focused</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum,
                 quisquam laborum.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">💰</div>
+            <div className="featureCard">
+              <div className="featureIcon">
+                <i className="fas fa-dollar-sign"></i>
+              </div>
               <h3>Budget-Friendly</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
@@ -39,74 +44,78 @@ const About = () => {
                 exercitationem.
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">🌱</div>
+            <div className="featureCard">
+              <div className="featureIcon">
+                <i className="fas fa-leaf"></i>
+              </div>
               <h3>Sustainable</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
                 harum excepturi hic explicabo ratione?
               </p>
             </div>
-            <div className="feature-card">
-              <div className="feature-icon">🤝</div>
-              <h3>Community-Driven</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Sapiente eveniet provident sit maiores harum saepe temporibus
-                earum perspiciatis laudantium voluptate.
-              </p>
-            </div>
+            
           </div>
         </section>
 
-        <section className="how-it-works">
+        <section className="howItWorks">
           <h2>How It Works</h2>
-          <div className="steps-container">
+          <div className="stepsContainer">
             <div className="step">
-              <div className="step-number">1</div>
+              <div className="stepNumber">
+                <i className="fas fa-search"></i>
+              </div>
               <h3>Browse & Discover</h3>
               <p>
-                Lorem, ipsum dolor.lorem Lorem, ipsum.
+                Explore thousands of items listed by fellow students in your
+                campus community.
               </p>
             </div>
             <div className="step">
-              <div className="step-number">2</div>
+              <div className="stepNumber">
+                <i className="fas fa-handshake"></i>
+              </div>
               <h3>Connect & Negotiate</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore.
+                Message sellers directly and negotiate fair prices for items you
+                want.
               </p>
             </div>
             <div className="step">
-              <div className="step-number">3</div>
+              <div className="stepNumber">
+                <i className="fas fa-exchange-alt"></i>
+              </div>
               <h3>Meet & Exchange</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Arrange safe meetups on campus to complete your transactions
+                securely.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="categories-section">
+        <section className="categoriesSection">
           <h2>Popular Categories</h2>
-          <div className="categories-grid">
-            <div className="category-item">📱 Electronics</div>
-            <div className="category-item">📖 Textbooks</div>
-            <div className="category-item">👕 Clothing</div>
-            <div className="category-item">🎮 Gaming</div>
-            <div className="category-item">⚽ Sports Equipment</div>
+          <div className="categoriesGrid">
+            <div className="categoryItem">
+              <i className="fas fa-mobile-alt"></i> Electronics
+            </div>
+            <div className="categoryItem">
+              <i className="fas fa-book"></i> Textbooks
+            </div>
+            <div className="categoryItem">
+              <i className="fas fa-tshirt"></i> Clothing
+            </div>
+            <div className="categoryItem">
+              <i className="fas fa-gamepad"></i> Gaming
+            </div>
+            <div className="categoryItem">
+              <i className="fas fa-football-ball"></i> Sports Equipment
+            </div>
           </div>
         </section>
 
-        <section className="cta-section">
-          <h2>Join Our Community Today!</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis
-            autem quae accusantium ea inventore, cum possimus non, repellat et
-            tempore aspernatur blanditiis, corrupti eius error mollitia odit!
-            Aut, quod. Sed provident eligendi reiciendis?
-          </p>
-          <button className="cta-button">Get Started</button>
-        </section>
+        <OurTeam />
       </div>
     </div>
   );
