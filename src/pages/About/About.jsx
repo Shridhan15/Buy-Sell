@@ -1,6 +1,6 @@
 import React from "react";
-import "./About.css"; 
-import OurTeam from "../components/OurTeam/OurTeam";
+import "./About.css";
+import OurTeam from "../../components/OurTeam/OurTeam";
 
 const About = () => {
   return (
@@ -54,7 +54,6 @@ const About = () => {
                 harum excepturi hic explicabo ratione?
               </p>
             </div>
-            
           </div>
         </section>
 

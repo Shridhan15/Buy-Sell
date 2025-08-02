@@ -241,7 +241,7 @@ body {
   position: relative;
   display: inline-block;
   padding: 15px 30px;
-  color: #03e9f4;
+  color: #06cb58;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -257,9 +257,9 @@ body {
 }
 
 .neonButton:hover {
-  background-color: #03e9f4;
+  background-color: #06cb58;
   color: #050801;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #06cb58,
     0 0 200px #03e9f4;
 }
 
@@ -273,7 +273,7 @@ body {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03e9f4);
+  background: linear-gradient(90deg, transparent, #06cb58);
   animation: animate1 1s linear infinite;
 }
 
@@ -282,7 +282,7 @@ body {
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #03e9f4);
+  background: linear-gradient(180deg, transparent, #06cb58);
   animation: animate2 1s linear infinite;
   animation-delay: 0.25s;
 }
@@ -292,7 +292,7 @@ body {
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #03e9f4);
+  background: linear-gradient(270deg, transparent, #06cb58);
   animation: animate3 1s linear infinite;
   animation-delay: 0.5s;
 }
@@ -302,7 +302,7 @@ body {
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #03e9f4);
+  background: linear-gradient(360deg, transparent, #06cb58);
   animation: animate4 1s linear infinite;
   animation-delay: 0.75s;
 }

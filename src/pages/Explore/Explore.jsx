@@ -1,6 +1,6 @@
 import React from "react";
 import "./Explore.css";
-import dummyProducts from "../assets/assets.js";
+import dummyProducts from "../../assets/assets.js";
 
 const Explore = () => {
   return (
